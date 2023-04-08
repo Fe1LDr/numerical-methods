@@ -1,0 +1,26 @@
+clear
+clc
+clf
+hold on, grid on
+axis square
+% функция Рунге
+f=@(x) 1/(1+25*x^2);
+fplot(f,[-5 5],'r')
+k=1:1:10;
+
+x_p=-5:1:5;
+for i=1:1:length ( x_p )
+f_p(i)=f(x_p(i));
+end
+temp = repmat ( x_p' , 1 ,length ( x_p ) ) ;
+power = repmat ( 0 : length (x_p)-1, length ( x_p ) , 1 ) ;
+X = temp .^ power;
+A=inv(X)*(f_p)';
+syms x
+P=0;
+n=length(A);
+for i=1:1:n
+P=P+A(i)*x^(i-1);
+end
+ezplot(P,[-5 5])
+df=f(4.5)-subs(P,4.5)

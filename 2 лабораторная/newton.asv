@@ -1,0 +1,16 @@
+function [root, iter] = newton(f, df, x0, tol, n)
+% f - исходная функция
+% df - производная функции
+% x0 - начальное приближение
+% tol - требуемая точность
+% root - найденный корень
+% iter - число итераций
+
+x = x0;
+iter = 0;
+while abs(f(x)) > tol
+    x = x - n*f(x)/df(x);
+    iter = iter + 1;
+end
+root = x;
+end
