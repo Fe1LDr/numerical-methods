@@ -21,6 +21,7 @@ h=@(z) cos(pi*z/3);
 for i=1:1:5
 P0(i)=P(x0(i));
 cosin(i)=h(x0(i));
+d(i)=abs(P0(i)-cosin(i));
 end
 disp('f0');
 disp(f0);
@@ -28,6 +29,8 @@ disp('P0');
 disp(P0);
 disp('cosin');
 disp(cosin);
+disp('d');
+disp(d);
 
 syms x
 for i=1:1:5
@@ -39,4 +42,5 @@ R(j)=subs(w,x0(j))/factorial(5);
 end
 R
 
-P(2) % рассчет значения многочлена в удаленной точке
+
+P(2);

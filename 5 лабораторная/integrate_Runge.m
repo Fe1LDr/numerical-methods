@@ -12,6 +12,5 @@ while delta > eps
     delta = abs((Ih2 - Ih)/(2^p - 1)); % оценка погрешности
     Ih = Ih2;
 end
-
 I = Ih;
 end

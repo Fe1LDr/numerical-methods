@@ -11,8 +11,6 @@ for i = 1:length(x)-1
 end
 
 y_analytic = 1 + (x.^3)/3;
-y;
-y_analytic;
 dy = y_analytic-y;
 max(dy)
 % Построение графиков

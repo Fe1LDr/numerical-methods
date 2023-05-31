@@ -22,14 +22,15 @@ disp('f0');
 disp(f0);
 % построение кривой линейной интерполяции
 for k=1:1:(length(i)-1)
-line([t(k) t(k+1)],[f0(k)
-f0(k+1)],'color','black')
+line([t(k) t(k+1)],[f(k) f(k+1)],'color','black')
 end
-plot(x0,f0,'r*')
+plot(x0,f,'r*')
 % рассчет погрешности
+% x0=[3/10, 5/10, 7/10, 9/10, 1];
+x0=[1/5, 2/5, 3/5, 4/5, 1];
 h=@(c) cos(pi*c/3);
 for u=1:1:5
-df(u)=h(x0(u))-f0(u);
+df(u)=abs(h(x0(u))-f0(u));
 end
 disp('df');
 disp(df);

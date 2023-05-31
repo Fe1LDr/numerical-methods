@@ -1,6 +1,5 @@
 function [I_trap, I_simp] = integrate(f, a, b, n)
 h = (b-a)/n;
-
 % вычисление интеграла методом трапеций
 % составная формула трапеций
 I_trap = (f(a) + f(b))/2;
@@ -21,5 +20,4 @@ for i = 1:n-1
     end
 end
 I_simp = h*I_simp/3;
-
 end

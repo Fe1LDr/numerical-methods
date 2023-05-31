@@ -11,7 +11,6 @@ while (b - a) / 2 > tol
         a = c;
     end
 end
-
 x = (a + b) / 2;
 end
 

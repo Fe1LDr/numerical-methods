@@ -1,7 +1,7 @@
 clear
 clc
 clf
-
+format short
 fplot(@(x) x^3,[0 1])
 hold on; grid on;
 etalon = 1/4
@@ -16,8 +16,8 @@ d2(2) = abs(1/3 - I_simpson2)
 d3(1) = abs(1/4 - I_trapez3) 
 d3(2) = abs(1/4 - I_simpson3)
 format long
-[I_trapez4, I_simpson4] = integrate(@(x) 1./(1+x.^2), 0, 1, 408);
-4*I_trapez4
-
-pi_pr = 4*integrate_Runge(@(x) 1./(1+x.^2), 0, 1, 1e-6)
+n = 1633 % n=(b-a)/h 
+[I_trapez4, I_simpson4] = integrate(@(x) 1./(1+x.^2), 0, 1, n);
+I_trapez = 4*I_trapez4
+pi_pr = 4*integrate_Runge(@(x) 1./(1+x.^2), 0, 1, (1e-6)/4)
 
